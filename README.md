@@ -18,9 +18,9 @@ NSGA-II-based multi-objective optimization of wing geometry for aerodynamic effi
 
 低速条件と巡航条件のそれぞれについて、機体重量を支えるために必要な揚力を発生させた状態での揚抗比
 
-$$
+```math
 \frac{L}{D}
-$$
+```
 
 を評価し、両方を同時に最大化します。
 
@@ -34,31 +34,31 @@ $$
 
 低速飛行時の揚抗比：
 
-$$
+```math
 \left(\frac{L}{D}\right)_{\mathrm{low}}
 \rightarrow \max
-$$
+```
 
 巡航飛行時の揚抗比：
 
-$$
+```math
 \left(\frac{L}{D}\right)_{\mathrm{cruise}}
 \rightarrow \max
-$$
+```
 
 `pymoo` では最小化問題として目的関数を定義するため、プログラム内部では
 
-$$
+```math
 f_1
 =
 -\left(\frac{L}{D}\right)_{\mathrm{low}}
-$$
+```
 
-$$
+```math
 f_2
 =
 -\left(\frac{L}{D}\right)_{\mathrm{cruise}}
-$$
+```
 
 として計算しています。
 
@@ -77,9 +77,9 @@ $$
 
 アスペクト比は
 
-$$
+```math
 AR=\frac{b^2}{S}
-$$
+```
 
 で定義されます。
 
@@ -100,9 +100,9 @@ $$
 
 各飛行条件では、
 
-$$
+```math
 L=W
-$$
+```
 
 となる迎角を求めます。
 
@@ -151,29 +151,29 @@ V_CRUISE = 25.0
 
 全抗力係数は概念的に、
 
-$$
+```math
 C_D
 =
 C_{D,\mathrm{profile}}
 +
 C_{D,i}
-$$
+```
 
 として評価しています。
 
 また、水平定常飛行では
 
-$$
+```math
 L=W
-$$
+```
 
 なので、必要揚力係数は
 
-$$
+```math
 C_{L,\mathrm{required}}
 =
 \frac{2W}{\rho V^2 S}
-$$
+```
 
 で求められます。
 
@@ -210,11 +210,11 @@ NSGA-II は主に、
 
 本研究では、
 
-$$
+```math
 \boldsymbol{x}
 =
 (S,\ AR,\ \lambda,\ \varepsilon)
-$$
+```
 
 の組合せを1つの個体として扱います。
 
@@ -236,15 +236,15 @@ $$
 
 本研究では、
 
-$$
+```math
 \left(\frac{L}{D}\right)_{\mathrm{low}}
-$$
+```
 
 と
 
-$$
+```math
 \left(\frac{L}{D}\right)_{\mathrm{cruise}}
-$$
+```
 
 の関係から、低速性能と巡航性能の間にトレードオフが存在するかを調べます。
 
@@ -342,15 +342,15 @@ output/figure/
 
 横軸：
 
-$$
+```math
 \left(\frac{L}{D}\right)_{\mathrm{low}}
-$$
+```
 
 縦軸：
 
-$$
+```math
 \left(\frac{L}{D}\right)_{\mathrm{cruise}}
-$$
+```
 
 として、パレート最適解を表示します。
 
